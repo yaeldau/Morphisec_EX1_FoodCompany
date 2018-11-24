@@ -13,7 +13,7 @@ public class Manager {
     public static void main (String[] args) {
 
         // parameters recives from command line
-        if (args.length < 3 || !(isValidInteger(args[0]) && isValidInteger(args[1]) && isValidInteger(args[2]))){
+        if (args.length < 3 || !(Util.isValidInteger(args[0]) && Util.isValidInteger(args[1]) && Util.isValidInteger(args[2]))){
             System.out.println("The arguments should be: \n"
             + "1. Number of people in customer service department \n"
             + "2. Number of people in Resolvers department \n"
@@ -31,9 +31,9 @@ public class Manager {
         // generate the customers complaints automatically
         Queue<saveComplaint> complaintsQueue = new LinkedList<>();
         for (int i = 0; i < complaintsNo; i++) {
-            String phone = "0509667566"; // TODO : generatePhone();
-            String name = "Yael"; //TODO: generate name
-            String description = "ex1"; //TODO: generate description
+            String phone = Util.generatePhone();
+            String name = Util.generateName();
+            String description = Util.generateDescription();
             Complaint complaint = new Complaint(phone, name, description);
             complaintsQueue.add(new saveComplaint(complaint));
         }
@@ -76,20 +76,5 @@ public class Manager {
     }
 
 
-    // valid arg is a string that represent natural number.
-    public static boolean isValidInteger(String arg) {
-        if (arg == null) {
-            return false;
-        }
-        if (arg.isEmpty()) {
-            return false;
-        }
-        for (int i=0; i < arg.length(); i++) {
-            char c = arg.charAt(i);
-            if (c < '0' || c > '9') {
-                return false;
-            }
-        }
-        return true;
-    }
+
 }
