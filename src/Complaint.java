@@ -1,9 +1,8 @@
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class Complaint implements Runnable {
+public class Complaint {
 
-    static private int ids = 0;
+    static private AtomicInteger ids = new AtomicInteger(0);
 
     private int id;
     private String contactPhone;
@@ -11,30 +10,34 @@ public class Complaint implements Runnable {
     private String description;
     private Boolean isResolved;
 
-    public Complaint (String contactPhone, String contactName, String description){
-        id = ids++;
+
+    public Complaint(String contactPhone, String contactName, String description){
+        id = ids.getAndIncrement();
         this.contactPhone = contactPhone;
         this.contactName = contactName;
         this.description = description;
         this.isResolved = false;
     }
 
-    @Override
-    public void run() {
-        for (int i=0; i<5 ; i++) {
-            Date d = new Date();
-            SimpleDateFormat ft = new SimpleDateFormat("hh:mm:ss");
-            System.out.println("complaint id-" + id + " creation time" + ft.format(d));
+    public int getId (){
+        return id;
+    }
 
-            // customer service call...
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+    public void resolve (){
+        isResolved = true;
+    }
 
-            // call ended
-        }
-        System.out.println("call ended");
+    public String toString(){
+        return "** \n"
+                + "Complaint id: \t" + id + "\n"
+                + "contact name: \t" + contactName + "\n"
+                + "contact phone: \t" + contactPhone + "\n"
+                + "description: \t" + description + "\n"
+                + "is resolved: \t" + isResolved + "\n"
+                + "**";
+    }
+
+    public String msgPrefix (){
+        return "complaint id-" + id + ": " ;
     }
 }
