@@ -13,9 +13,19 @@ public class Manager {
     public static void main (String[] args) {
 
         // parameters recives from command line
-        final int customerServiceDepartmentSize = 3;
-        final int ResolversDepartmentSize = 2;
-        final int complaintsNo = 5;
+        if (args.length < 3 || !(isValidInteger(args[0]) && isValidInteger(args[1]) && isValidInteger(args[2]))){
+            System.out.println("The arguments should be: \n"
+            + "1. Number of people in customer service department \n"
+            + "2. Number of people in Resolvers department \n"
+            + "3. Number of complaints that will enter to the customer service department. \n"
+            + "Please re-run the program with correct arguments.");
+
+            System.exit(1);
+            return;
+        }
+        final int customerServiceDepartmentSize = Integer.parseInt(args[0]);
+        final int ResolversDepartmentSize = Integer.parseInt(args[1]);
+        final int complaintsNo = Integer.parseInt(args[2]);
         complaintsRemainToResolve = complaintsNo;
 
         // generate the customers complaints automatically
@@ -38,7 +48,7 @@ public class Manager {
         // creates another thread pool.
         // each thread represent one worker in the resolvers department.
         // => fixed thread pool size = resolvers department size
-        resolversPool = Executors.newFixedThreadPool(customerServiceDepartmentSize);
+        resolversPool = Executors.newFixedThreadPool(ResolversDepartmentSize);
 
         // customer service department start getting calls:
 
@@ -63,5 +73,23 @@ public class Manager {
         if (complaintsRemainToResolve == 0){
             resolversPool.shutdown();
         }
+    }
+
+
+    // valid arg is a string that represent natural number.
+    public static boolean isValidInteger(String arg) {
+        if (arg == null) {
+            return false;
+        }
+        if (arg.isEmpty()) {
+            return false;
+        }
+        for (int i=0; i < arg.length(); i++) {
+            char c = arg.charAt(i);
+            if (c < '0' || c > '9') {
+                return false;
+            }
+        }
+        return true;
     }
 }

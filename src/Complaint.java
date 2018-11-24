@@ -23,7 +23,7 @@ public class Complaint {
         return id;
     }
 
-    public void resolve (){
+    public void resolved (){
         isResolved = true;
     }
 

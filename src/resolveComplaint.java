@@ -21,11 +21,11 @@ public class resolveComplaint implements Runnable {
 
         // done resolving the complaint
 
-        complaint.resolve();
+        complaint.resolved();
 
         Date d = new Date();
         SimpleDateFormat ft = new SimpleDateFormat("hh:mm:ss");
         System.out.println(complaint.msgPrefix() + "resolved time: " + ft.format(d));
-        
+
     }
 }
