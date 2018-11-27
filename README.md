@@ -45,7 +45,7 @@ $ git clone https://github.com/yaeldau/Morphisec_EX1_FoodCompany.git
 
 Back to command line:
 ```shell
-$ cd FoodCompany
+$ cd Morphisec_EX1_FoodCompany
 $ java -jar FoodCompany.jar 3 2 5   - example
 ```
 
