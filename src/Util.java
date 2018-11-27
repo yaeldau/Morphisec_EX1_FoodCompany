@@ -30,8 +30,6 @@ public class Util {
         return "Lorem ipsum dolor sit amet consectetur ...";
     }
 
-    public static String generateName (){
-        return "Yael" ;
-    }
+    public static String generateName (){ return "Yael" ;  }
 }
 
