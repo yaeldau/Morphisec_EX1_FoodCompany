@@ -27,3 +27,28 @@ Notice:
   - No complaint is forgotten
   - No complaint has been dealt with 2 persons in Resolvers department.
   - Each person can work on one complaint at a time
+
+
+
+## instructions
+
+Open a shell and traverse to a directory in your computer where you wish to store
+the code. For example, in Windows:
+```shell
+$  mkdir empty_folder
+$  cd empty_folder
+```
+In a git shell, execute the following command:
+```shell
+$ git clone https://github.com/yaeldau/Morphisec_EX1_FoodCompany.git
+```
+
+Back to command line:
+```shell
+$ cd FoodCompany
+$ java -jar FoodCompany.jar 3 2 5   - example
+```
+
+### enjoy!
+
+
