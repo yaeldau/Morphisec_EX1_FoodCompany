@@ -29,13 +29,13 @@ public class Manager {
         complaintsRemainToResolve = complaintsNo;
 
         // generate the customers complaints automatically
-        Queue<saveComplaint> complaintsQueue = new LinkedList<>();
+        Queue<SaveComplaint> complaintsQueue = new LinkedList<>();
         for (int i = 0; i < complaintsNo; i++) {
             String phone = Util.generatePhone();
             String name = Util.generateName();
             String description = Util.generateDescription();
             Complaint complaint = new Complaint(phone, name, description);
-            complaintsQueue.add(new saveComplaint(complaint));
+            complaintsQueue.add(new SaveComplaint(complaint));
         }
 
         // initialize pools:
@@ -52,7 +52,7 @@ public class Manager {
 
         // customer service department start getting calls:
 
-        // passes the saveComplaint objects to the pool to execute.
+        // passes the SaveComplaint objects to the pool to execute.
         // explain: the customer service worker will get the customer call, save the complain and
         //          pass it to the resolvers department.
         while (!complaintsQueue.isEmpty()) {
@@ -66,7 +66,7 @@ public class Manager {
 
     // resolvers department get new complaint.
     public static void saveComplaint (Complaint c){
-        resolversPool.execute(new resolveComplaint(c));
+        resolversPool.execute(new ResolveComplaint(c));
 
         // when last complaint move to resolve department the pool can shut down.
         complaintsRemainToResolve--;

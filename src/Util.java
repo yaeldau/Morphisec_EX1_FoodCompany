@@ -39,32 +39,6 @@ public class Util {
     }
 
     public static String generateName (){
-//        URL url = null;
-//        HttpURLConnection con = null;
-//        StringBuilder response = null;
-//        try {
-//            url = new URL("https://uinames.com/api/?region=United%20States");
-//            con = (HttpURLConnection) url.openConnection();
-//            con.setRequestMethod("GET");
-//
-//            //Get Response
-//            InputStream is = con.getInputStream();
-//            BufferedReader rd = new BufferedReader(new InputStreamReader(is));
-//            response = new StringBuilder(); // or StringBuffer if Java version 5+
-//            response.append(rd.readLine());
-//
-//            String[] splitedResponse = response.toString().split("\"|:|,");
-//            System.out.println(response);
-//
-//
-//
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        } catch (IOException e1) {
-//            e1.printStackTrace();
-//        }
-//
-
         return "Yael" ;
     }
 }

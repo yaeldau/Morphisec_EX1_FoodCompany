@@ -1,11 +1,11 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class saveComplaint implements Runnable {
+public class SaveComplaint implements Runnable {
 
     private Complaint complaint;
 
-    public saveComplaint(Complaint complaint){
+    public SaveComplaint(Complaint complaint){
         this.complaint = complaint;
     }
 
