@@ -32,18 +32,14 @@ Notice:
 ##
 ## instructions
 
-Open a shell and traverse to a directory in your computer where you wish to store
-the code. For example, in Windows:
-```shell
-$  mkdir empty_folder
-$  cd empty_folder
-```
-In a git shell, execute the following command:
+Open a git shell and traverse to a directory in your computer where you wish to store
+the code.
+Execute the following command:
 ```shell
 $ git clone https://github.com/yaeldau/Morphisec_EX1_FoodCompany.git
 ```
 
-Back to command line:
+On command line:
 ```shell
 $ cd Morphisec_EX1_FoodCompany
 $ java -jar FoodCompany.jar 3 2 5   - example
