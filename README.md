@@ -1,6 +1,6 @@
 # Morphisec_EX1_FoodCompany
 
-task:
+## task:
 
 Assignment 1 – Food Company
 A Food Company has a customer service department that receives calls from unsatisfied clients.
@@ -29,7 +29,7 @@ Notice:
   - Each person can work on one complaint at a time
 
 
-
+##
 ## instructions
 
 Open a shell and traverse to a directory in your computer where you wish to store
